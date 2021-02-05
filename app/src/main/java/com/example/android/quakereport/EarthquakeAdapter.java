@@ -10,9 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-
+import android.graphics.drawable.GradientDrawable;
 import org.w3c.dom.Text;
-
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -80,50 +79,55 @@ public class EarthquakeAdapter extends ArrayAdapter<EarthquakeObject> {
         TextView locationOffsetView = (TextView) listItemView.findViewById(R.id.location_offset);
         locationOffsetView.setText(locationOffset);
 
+        GradientDrawable magnitudeCircle = (GradientDrawable) magnitudeTextView.getBackground();
+
+        int magnitudeColor = getMagnitudeColor(currentObject.getMagnitude());
+
+        magnitudeCircle.setColor(magnitudeColor);
 
         return listItemView;
     }
 
-//    private int getMagnitudeColor(double magnitude) {
-//        int magnitudeColorRId;
-//        int magnitudeFloor = (int) Math.floor(magnitude);
-//
-//        switch (magnitudeFloor) {
-//            case 0:
-//            case 1:
-//                magnitudeColorRId = R.color.magnitude1;
-//                break;
-//            case 2:
-//                magnitudeColorRId = R.color.magnitude2;
-//                break;
-//            case 3:
-//                magnitudeColorRId = R.color.magnitude3;
-//                break;
-//            case 4:
-//                magnitudeColorRId = R.color.magnitude4;
-//                break;
-//            case 5:
-//                magnitudeColorRId = R.color.magnitude5;
-//                break;
-//            case 6:
-//                magnitudeColorRId = R.color.magnitude6;
-//                break;
-//            case 7:
-//                magnitudeColorRId = R.color.magnitude7;
-//                break;
-//            case 8:
-//                magnitudeColorRId = R.color.magnitude8;
-//                break;
-//            case 9:
-//                magnitudeColorRId = R.color.magnitude9;
-//                break;
-//            default:
-//                magnitudeColorRId = R.color.magnitude10plus;
-//                break;
-//        }
-//
-//        return ContextCompat.getColor(getContext(), magnitudeColorRId);
-//    }
+    private int getMagnitudeColor(double magnitude) {
+        int magnitudeColorRId;
+        int magnitudeFloor = (int) Math.floor(magnitude);
+
+        switch (magnitudeFloor) {
+            case 0:
+            case 1:
+                magnitudeColorRId = R.color.magnitude1;
+                break;
+            case 2:
+                magnitudeColorRId = R.color.magnitude2;
+                break;
+            case 3:
+                magnitudeColorRId = R.color.magnitude3;
+                break;
+            case 4:
+                magnitudeColorRId = R.color.magnitude4;
+                break;
+            case 5:
+                magnitudeColorRId = R.color.magnitude5;
+                break;
+            case 6:
+                magnitudeColorRId = R.color.magnitude6;
+                break;
+            case 7:
+                magnitudeColorRId = R.color.magnitude7;
+                break;
+            case 8:
+                magnitudeColorRId = R.color.magnitude8;
+                break;
+            case 9:
+                magnitudeColorRId = R.color.magnitude9;
+                break;
+            default:
+                magnitudeColorRId = R.color.magnitude10plus;
+                break;
+        }
+
+        return ContextCompat.getColor(getContext(), magnitudeColorRId);
+    }
 
     private String formatMagnitude(double magnitude) {
         DecimalFormat magnitudeFormat = new DecimalFormat("0.0");
