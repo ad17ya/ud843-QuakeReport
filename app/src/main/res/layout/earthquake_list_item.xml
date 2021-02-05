@@ -13,11 +13,18 @@
         tools:text="9.8" />
 
     <TextView
-        android:id="@+id/location"
+        android:id="@+id/location_offset"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        tools:text="Solapur" />
+        tools:text="30KM S of" />
+
+    <TextView
+        android:id="@+id/primary_location"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="San Francisco, CA" />
 
     <TextView
         android:id="@+id/date"
@@ -25,5 +32,12 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         tools:text="May 8, 1999" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="3:00 PM" />
 
 </LinearLayout>

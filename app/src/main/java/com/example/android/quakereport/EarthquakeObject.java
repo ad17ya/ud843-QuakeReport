@@ -2,17 +2,17 @@ package com.example.android.quakereport;
 
 public class EarthquakeObject {
 
-    private String magnitude;
+    private double magnitude;
     private String location;
-    private String date;
+    private long mTimeInMilliseconds;
 
-    public EarthquakeObject(String magnitude, String location, String date){
+    public EarthquakeObject(double magnitude, String location, long timeInMilliseconds){
         this.magnitude = magnitude;
         this.location = location;
-        this.date = date;
+        this.mTimeInMilliseconds = timeInMilliseconds;
     }
 
-    public String getMagnitude() {
+    public double getMagnitude() {
         return magnitude;
     }
 
@@ -20,7 +20,7 @@ public class EarthquakeObject {
         return location;
     }
 
-    public String getDate() {
-        return date;
+    public long getmTimeInMilliseconds() {
+        return mTimeInMilliseconds;
     }
 }
